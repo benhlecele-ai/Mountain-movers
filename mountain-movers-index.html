@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1B2A4A">
+  <meta name="description" content="Mountain Movers — Furniture Removals & Storage. Professional home, office and long-distance removals across South Africa.">
+  <title>Mountain Movers | Furniture Removals & Storage</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mountain: '#1B2A4A',
+            slateDeep: '#0F172A',
+            electric: '#FACC15',
+            paper: '#F8FAFC'
+          },
+          boxShadow: {
+            lift: '0 20px 55px rgba(15,23,42,.12)',
+            navy: '0 18px 45px rgba(15,23,42,.22)'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:#1B2A4A; --deep:#0F172A; --yellow:#FACC15; --paper:#F8FAFC; --line:#E2E8F0;
+    }
+    html { scroll-behavior:smooth; }
+    body { margin:0; overflow-x:hidden; background:var(--paper); color:#0F172A; font-family:Inter,sans-serif; }
+    h1,h2,h3,h4,.display { font-family:Montserrat,sans-serif; }
+    .anchor { scroll-margin-top:92px; }
+
+    .hero {
+      background:
+        linear-gradient(110deg,rgba(15,23,42,.98),rgba(27,42,74,.94)),
+        radial-gradient(circle at 88% 18%,rgba(250,204,21,.20),transparent 30%);
+    }
+    .grid-lines {
+      background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
+      background-size:42px 42px;
+    }
+    .yellow-bar { width:58px; height:4px; background:var(--yellow); }
+    .btn { transition:transform .2s ease,box-shadow .2s ease,background .2s ease; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(15,23,42,.18); }
+    .service-card { transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+    .service-card:hover { transform:translateY(-6px); border-color:rgba(250,204,21,.75); box-shadow:0 20px 45px rgba(15,23,42,.10); }
+    .field { transition:border-color .2s ease,box-shadow .2s ease; }
+    .field:focus { outline:none;border-color:var(--yellow);box-shadow:0 0 0 4px rgba(250,204,21,.14); }
+    .route-chip { transition:transform .2s ease,background .2s ease,color .2s ease; }
+    .route-chip:hover { transform:translateY(-3px); }
+    .pulse-wa { animation:pulseWA 2.5s infinite; }
+    @keyframes pulseWA {
+      0%,100% { box-shadow:0 0 0 0 rgba(37,211,102,.28),0 12px 28px rgba(15,23,42,.18); }
+      50% { box-shadow:0 0 0 12px rgba(37,211,102,0),0 12px 28px rgba(15,23,42,.18); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+
+<body>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slateDeep/95 backdrop-blur-md">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex min-h-[72px] items-center justify-between gap-5">
+      <a href="#home" class="flex items-center gap-3" aria-label="Mountain Movers home">
+        <span class="grid h-11 w-11 place-items-center rounded-xl bg-electric text-slateDeep font-black shadow-sm">MM</span>
+        <span>
+          <span class="block text-sm font-black tracking-wide text-white sm:text-base">MOUNTAIN MOVERS</span>
+          <span class="block text-[10px] font-bold uppercase tracking-[.16em] text-yellow-300 sm:text-[11px]">Furniture Removals & Storage</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
+        <a href="#home" class="text-sm font-bold text-white/80 hover:text-electric">Home</a>
+        <a href="#services" class="text-sm font-bold text-white/80 hover:text-electric">Services</a>
+        <a href="#routes" class="text-sm font-bold text-white/80 hover:text-electric">Routes</a>
+        <a href="#calculator" class="text-sm font-bold text-white/80 hover:text-electric">Quote Calculator</a>
+        <a href="#contact" class="text-sm font-bold text-white/80 hover:text-electric">Contact</a>
+      </nav>
+
+      <div class="hidden items-center gap-2 md:flex">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Mountain Movers Facebook"
+           class="grid h-10 w-10 place-items-center rounded-lg border border-white/20 text-white font-black hover:border-electric hover:text-electric">f</a>
+        <a href="tel:+27810269209" class="rounded-lg border border-white/20 px-3 py-2 text-xs font-bold text-white hover:border-electric hover:text-electric">081 026 9209</a>
+        <a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" class="btn rounded-lg bg-electric px-4 py-2.5 text-xs font-black text-slateDeep">WhatsApp</a>
+      </div>
+
+      <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-lg border border-white/20 text-white lg:hidden" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation">
+        <svg id="menuIcon" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg id="closeIcon" class="hidden" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 py-4 lg:hidden">
+      <nav class="grid gap-1">
+        <a href="#home" class="rounded-lg px-3 py-3 text-sm font-bold text-white/90 hover:bg-white/5">Home</a>
+        <a href="#services" class="rounded-lg px-3 py-3 text-sm font-bold text-white/90 hover:bg-white/5">Services</a>
+        <a href="#routes" class="rounded-lg px-3 py-3 text-sm font-bold text-white/90 hover:bg-white/5">Routes</a>
+        <a href="#calculator" class="rounded-lg px-3 py-3 text-sm font-bold text-white/90 hover:bg-white/5">Quote Calculator</a>
+        <a href="#contact" class="rounded-lg px-3 py-3 text-sm font-bold text-white/90 hover:bg-white/5">Contact</a>
+        <div class="mt-2 grid grid-cols-2 gap-2">
+          <a href="tel:+27810269209" class="rounded-lg border border-white/20 px-4 py-3 text-center text-xs font-bold text-white">Call</a>
+          <a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" class="rounded-lg bg-electric px-4 py-3 text-center text-xs font-black text-slateDeep">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="anchor hero relative isolate overflow-hidden pt-32 text-white sm:pt-36">
+    <div class="grid-lines absolute inset-0"></div>
+    <div class="absolute -right-40 top-12 h-[520px] w-[520px] rounded-full bg-yellow-300/10 blur-3xl"></div>
+
+    <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.08fr_.92fr] lg:px-8 lg:pb-28">
+      <div class="hero-copy max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-yellow-300/40 bg-white/5 px-4 py-2 text-xs font-black uppercase tracking-[.14em] text-yellow-300">
+          Furniture Removals & Storage
+        </div>
+        <h1 class="mt-6 text-5xl font-black leading-[1.01] tracking-tight sm:text-6xl lg:text-7xl">MOVING?<br><span class="text-electric">MADE EASY!</span></h1>
+        <div class="mt-6 yellow-bar"></div>
+        <h2 class="mt-6 text-xl font-black sm:text-2xl">WE MOVE. YOU RELAX.</h2>
+        <p class="mt-5 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
+          Professional furniture removals and storage for homes, offices and long-distance moves across South Africa.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <span class="trust-badge rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-black">★ Rated 10/10 by Our Customers</span>
+          <span class="trust-badge rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-black">Weekly Long Distance Routes</span>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#calculator" class="btn inline-flex justify-center rounded-lg bg-electric px-6 py-3.5 text-sm font-black text-slateDeep">Calculate Rough Quote →</a>
+          <a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" class="btn inline-flex justify-center rounded-lg border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-black text-white hover:border-electric">WhatsApp Us For A Free Quote</a>
+        </div>
+      </div>
+
+      <div class="hero-panel rounded-2xl border border-white/15 bg-white/5 p-6 shadow-2xl backdrop-blur-sm sm:p-7">
+        <div class="flex items-center justify-between border-b border-white/10 pb-5">
+          <div>
+            <p class="text-xs font-black uppercase tracking-[.17em] text-yellow-300">Why customers choose us</p>
+            <h2 class="mt-2 text-xl font-black">A move handled properly.</h2>
+          </div>
+          <span class="grid h-11 w-11 place-items-center rounded-xl bg-electric text-slateDeep font-black">10/10</span>
+        </div>
+        <div class="mt-6 grid gap-3">
+          <div class="trust-panel rounded-xl bg-white p-4 text-slateDeep">
+            <p class="text-sm font-black">Trusted Professional Team</p>
+            <p class="mt-1 text-xs text-slate-500">Experienced handling with a focus on dependable service.</p>
+          </div>
+          <div class="trust-panel rounded-xl bg-white p-4 text-slateDeep">
+            <p class="text-sm font-black">Careful With Your Furniture</p>
+            <p class="mt-1 text-xs text-slate-500">Protective packing and careful loading for valuable belongings.</p>
+          </div>
+          <div class="trust-panel rounded-xl bg-electric p-4 text-slateDeep">
+            <p class="text-sm font-black">Competitive Rates</p>
+            <p class="mt-1 text-xs text-slateDeep/70">Get a tailored quote based on your move requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes -->
+  <section id="routes" class="anchor border-b border-slate-200 bg-white py-14">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="route-head text-center">
+        <p class="text-xs font-black uppercase tracking-[.2em] text-slate-500">Weekly long-distance network</p>
+        <h2 class="mt-2 text-2xl font-black text-mountain sm:text-3xl">Regular routes. Fewer moving-day surprises.</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600">Weekly trips between major South African hubs, subject to scheduling and available capacity.</p>
+      </div>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#calculator" class="route-chip rounded-xl border-2 border-slate-200 bg-slate-50 px-6 py-4 text-center hover:border-electric hover:bg-yellow-50"><strong class="block text-xl font-black text-mountain">JHB</strong><span class="text-[10px] font-bold text-slate-500">Johannesburg</span></a>
+        <a href="#calculator" class="route-chip rounded-xl border-2 border-slate-200 bg-slate-50 px-6 py-4 text-center hover:border-electric hover:bg-yellow-50"><strong class="block text-xl font-black text-mountain">PTA</strong><span class="text-[10px] font-bold text-slate-500">Pretoria</span></a>
+        <a href="#calculator" class="route-chip rounded-xl border-2 border-slate-200 bg-slate-50 px-6 py-4 text-center hover:border-electric hover:bg-yellow-50"><strong class="block text-xl font-black text-mountain">DBN</strong><span class="text-[10px] font-bold text-slate-500">Durban</span></a>
+        <a href="#calculator" class="route-chip rounded-xl border-2 border-slate-200 bg-slate-50 px-6 py-4 text-center hover:border-electric hover:bg-yellow-50"><strong class="block text-xl font-black text-mountain">CPT</strong><span class="text-[10px] font-bold text-slate-500">Cape Town</span></a>
+        <a href="#calculator" class="route-chip rounded-xl border-2 border-slate-200 bg-slate-50 px-6 py-4 text-center hover:border-electric hover:bg-yellow-50"><strong class="block text-xl font-black text-mountain">PE</strong><span class="text-[10px] font-bold text-slate-500">Gqeberha</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="anchor bg-slate-50 py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="section-heading max-w-2xl">
+        <p class="text-xs font-black uppercase tracking-[.2em] text-slate-500">Our services</p>
+        <h2 class="mt-3 text-3xl font-black text-mountain sm:text-4xl">Moving services built around your move.</h2>
+        <div class="mt-5 yellow-bar"></div>
+        <p class="mt-5 leading-7 text-slate-600">Whether you're relocating a household, an office, or a few important items, choose the service that fits your requirements.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="service-card rounded-2xl border border-slate-200 bg-white p-6">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-xl bg-mountain text-electric text-xl">⌂</span><span class="text-xs font-black text-slate-300">01</span></div>
+          <h3 class="mt-6 text-xl font-black text-mountain">Home Removals</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Full-house and apartment moves with practical planning from pickup to delivery.</p>
+          <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-500"><li>✓ Household furniture</li><li>✓ Apartment relocations</li><li>✓ Local & long distance</li></ul>
+          <a href="#calculator" data-service="Local Home Move" class="service-quote mt-6 inline-flex text-sm font-black text-mountain hover:text-yellow-600">Get a Moving Quote →</a>
+        </article>
+
+        <article class="service-card rounded-2xl border border-slate-200 bg-white p-6">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-xl bg-mountain text-electric text-xl">▦</span><span class="text-xs font-black text-slate-300">02</span></div>
+          <h3 class="mt-6 text-xl font-black text-mountain">Office Removals</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Corporate and commercial relocations planned around your operational requirements.</p>
+          <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-500"><li>✓ Office furniture</li><li>✓ Commercial moves</li><li>✓ Structured relocation</li></ul>
+          <a href="#calculator" data-service="Office Removals" class="service-quote mt-6 inline-flex text-sm font-black text-mountain hover:text-yellow-600">Get an Office Quote →</a>
+        </article>
+
+        <article class="service-card rounded-2xl border border-slate-200 bg-white p-6">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-xl bg-mountain text-electric text-xl">↔</span><span class="text-xs font-black text-slate-300">03</span></div>
+          <h3 class="mt-6 text-xl font-black text-mountain">Local & Long Distance</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Weekly JHB, PTA, DBN, CPT and PE routes for inter-city and inter-provincial moves.</p>
+          <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-500"><li>✓ Weekly routes</li><li>✓ Major SA hubs</li><li>✓ Route-based planning</li></ul>
+          <a href="#calculator" data-service="Long Distance Move" class="service-quote mt-6 inline-flex text-sm font-black text-mountain hover:text-yellow-600">Plan Your Route →</a>
+        </article>
+
+        <article class="service-card rounded-2xl border border-slate-200 bg-white p-6">
+          <div class="flex items-start justify-between"><span class="grid h-12 w-12 place-items-center rounded-xl bg-mountain text-electric text-xl">▤</span><span class="text-xs font-black text-slate-300">04</span></div>
+          <h3 class="mt-6 text-xl font-black text-mountain">Wrapping & Packing</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Professional protective packing for furniture and belongings that need extra care.</p>
+          <ul class="mt-5 space-y-2 text-xs font-semibold text-slate-500"><li>✓ Protective wrapping</li><li>✓ Furniture handling</li><li>✓ Packing assistance</li></ul>
+          <a href="#calculator" data-service="Packing & Wrapping" class="service-quote mt-6 inline-flex text-sm font-black text-mountain hover:text-yellow-600">Add Packing →</a>
+        </article>
+
+        <article class="service-card rounded-2xl border border-slate-200 bg-white p-6 sm:col-span-2">
+          <div class="grid gap-6 md:grid-cols-[auto_1fr_auto] md:items-center">
+            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mountain text-electric text-xl">▣</span>
+            <div><h3 class="text-xl font-black text-mountain">Secure Storage</h3><p class="mt-2 text-sm leading-6 text-slate-600">Safe, insured long-term and short-term storage solutions when your move dates don't line up.</p></div>
+            <a href="#calculator" data-service="Secure Storage" class="service-quote text-sm font-black text-mountain hover:text-yellow-600">Ask About Storage →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust strip -->
+  <section class="bg-mountain py-12 text-white">
+    <div class="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+      <div class="trust-strip rounded-xl border border-white/10 bg-white/5 p-5"><p class="text-sm font-black text-electric">01 / Trusted Professional Team</p><p class="mt-2 text-xs leading-5 text-slate-300">A service-first approach from first enquiry to final delivery.</p></div>
+      <div class="trust-strip rounded-xl border border-white/10 bg-white/5 p-5"><p class="text-sm font-black text-electric">02 / Careful With Your Furniture</p><p class="mt-2 text-xs leading-5 text-slate-300">Protective packing and careful handling are central to the move.</p></div>
+      <div class="trust-strip rounded-xl border border-white/10 bg-white/5 p-5"><p class="text-sm font-black text-electric">03 / Competitive Rates</p><p class="mt-2 text-xs leading-5 text-slate-300">Use our calculator for an initial planning range before requesting a formal quote.</p></div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section id="calculator" class="anchor bg-white py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs font-black uppercase tracking-[.2em] text-slate-500">Project planner</p>
+        <h2 class="mt-3 text-3xl font-black text-mountain sm:text-4xl">Rough Quote Calculator</h2>
+        <div class="mt-5 yellow-bar"></div>
+        <p class="mt-5 leading-7 text-slate-600">Choose your route and move size to get an indicative estimate. The official quote is subject to your final inventory and moving requirements.</p>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
+        <form id="quoteForm" class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div><label for="name" class="mb-2 block text-sm font-bold text-mountain">Full Name *</label><input id="name" required type="text" placeholder="Your name" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm"></div>
+            <div><label for="phone" class="mb-2 block text-sm font-bold text-mountain">Phone Number *</label><input id="phone" required type="tel" placeholder="e.g. 081 000 0000" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm"></div>
+
+            <div class="sm:col-span-2">
+              <label for="service" class="mb-2 block text-sm font-bold text-mountain">Move Type / Service</label>
+              <select id="service" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm">
+                <option value="Local Home Move">Local Home Move</option>
+                <option value="Office Removals">Office Removals</option>
+                <option value="Long Distance Move">Long Distance Move</option>
+                <option value="Packing & Wrapping">Packing & Wrapping</option>
+                <option value="Secure Storage">Secure Storage</option>
+              </select>
+            </div>
+
+            <div><label for="pickup" class="mb-2 block text-sm font-bold text-mountain">Pickup City</label>
+              <select id="pickup" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm">
+                <option>JHB</option><option>PTA</option><option>DBN</option><option>CPT</option><option>PE</option><option>Local</option>
+              </select>
+            </div>
+            <div><label for="destination" class="mb-2 block text-sm font-bold text-mountain">Destination City</label>
+              <select id="destination" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm">
+                <option>PTA</option><option>JHB</option><option>DBN</option><option>CPT</option><option>PE</option><option>Local</option>
+              </select>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="size" class="mb-2 block text-sm font-bold text-mountain">Move Size</label>
+              <select id="size" class="field w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm">
+                <option value="Single Items / Few Boxes">Single Items / Few Boxes</option>
+                <option value="1-2 Bedroom">1-2 Bedroom</option>
+                <option value="3-4 Bedroom">3-4 Bedroom</option>
+                <option value="Large House / Commercial Office">Large House / Commercial Office</option>
+              </select>
+            </div>
+
+            <label class="sm:col-span-2 flex cursor-pointer items-start gap-3 rounded-xl border border-slate-200 bg-white p-4">
+              <input id="packing" type="checkbox" class="mt-1 h-4 w-4 accent-[#FACC15]">
+              <span><strong class="block text-sm text-mountain">I need packing / wrapping assistance</strong><small class="mt-1 block text-xs text-slate-500">Adds an indicative packing allowance to the estimate.</small></span>
+            </label>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <button type="submit" class="btn flex-1 rounded-lg bg-mountain px-5 py-3.5 text-sm font-black text-white hover:bg-slateDeep">Send Quote Estimate to WhatsApp →</button>
+            <button type="reset" class="rounded-lg border border-slate-300 px-5 py-3.5 text-sm font-bold text-slate-700">Reset</button>
+          </div>
+          <p id="error" class="mt-3 hidden text-sm font-bold text-red-600"></p>
+        </form>
+
+        <aside class="rounded-2xl bg-mountain p-7 text-white shadow-navy sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[.18em] text-electric">Live calculation</p>
+          <h3 class="mt-3 text-2xl font-black">Estimated Move Range</h3>
+          <div class="mt-6 rounded-xl border border-white/10 bg-white/5 p-6">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Rough planning estimate</p>
+            <p id="estimate" class="mt-2 text-4xl font-black text-white">R3 500 – R6 000</p>
+            <p id="estimateNote" class="mt-3 text-sm leading-6 text-slate-300">Based on a local single-item move.</p>
+          </div>
+          <div class="mt-6 space-y-4 text-sm">
+            <div class="flex justify-between border-b border-white/10 pb-3"><span class="text-slate-400">Service</span><strong id="sService">Local Home Move</strong></div>
+            <div class="flex justify-between border-b border-white/10 pb-3"><span class="text-slate-400">Route</span><strong id="sRoute">JHB → PTA</strong></div>
+            <div class="flex justify-between"><span class="text-slate-400">Move size</span><strong id="sSize">Single Items / Few Boxes</strong></div>
+          </div>
+          <div class="mt-7 border-l-2 border-electric pl-4 text-xs leading-5 text-slate-300"><strong class="text-white">Rough estimate only.</strong> Official quote subject to final inventory.</div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="anchor bg-slate-50 py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lift lg:grid-cols-[.82fr_1.18fr]">
+        <div class="p-7 sm:p-10">
+          <p class="text-xs font-black uppercase tracking-[.2em] text-slate-500">Contact Mountain Movers</p>
+          <h2 class="mt-3 text-3xl font-black text-mountain">WE MOVE. YOU RELAX.</h2>
+          <div class="mt-5 yellow-bar"></div>
+          <p class="mt-5 text-sm leading-6 text-slate-600">Tell us where you're moving from, where you're going and what needs to be moved. We'll help you work out the next step.</p>
+
+          <div class="mt-8 space-y-5">
+            <a href="tel:+27810269209" class="flex items-start gap-4 group"><span class="grid h-11 w-11 place-items-center rounded-lg bg-mountain text-electric">☎</span><span><span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Call / WhatsApp</span><strong class="mt-1 block text-mountain group-hover:text-yellow-600">081 026 9209</strong></span></a>
+            <a href="mailto:quotes@mountainmovers.co.za" class="flex items-start gap-4 group"><span class="grid h-11 w-11 place-items-center rounded-lg bg-mountain text-electric">@</span><span><span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Email</span><strong class="mt-1 block text-mountain group-hover:text-yellow-600">quotes@mountainmovers.co.za</strong></span></a>
+            <div class="flex items-start gap-4"><span class="grid h-11 w-11 place-items-center rounded-lg bg-mountain text-electric">↔</span><span><span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Coverage</span><strong class="mt-1 block text-mountain">JHB • PTA • DBN • CPT • PE</strong></span></div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" class="btn rounded-lg bg-electric px-5 py-3 text-sm font-black text-slateDeep">WhatsApp Us</a>
+            <a href="mailto:quotes@mountainmovers.co.za" class="btn rounded-lg border border-slate-300 px-5 py-3 text-sm font-bold text-mountain">Email for a Quote</a>
+          </div>
+        </div>
+        <div class="min-h-[380px] bg-slate-200">
+          <iframe title="South Africa map" class="h-full min-h-[380px] w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Johannesburg%2C%20South%20Africa&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" aria-label="Chat with Mountain Movers on WhatsApp"
+ class="pulse-wa fixed bottom-5 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white sm:bottom-7 sm:right-7">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M20 11.6a8 8 0 0 1-11.8 7.1L4 20l1.4-4A8 8 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.7"/>
+    <path d="M8.8 8.7c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.2 1.5 2.1 1.9.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .4-.2 1.1-.5 1.3-.4.4-1.1.5-1.6.4-1-.2-2.1-.8-3.1-1.6-.9-.7-1.7-1.6-2.2-2.5-.5-.8-.8-1.7-.7-2.3.1-.4.4-1 .8-1.3Z" fill="currentColor"/>
+  </svg>
+</a>
+
+<footer class="bg-slateDeep text-white">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-[1.35fr_.7fr_.8fr]">
+      <div>
+        <div class="flex items-center gap-3"><span class="grid h-11 w-11 place-items-center rounded-xl bg-electric text-slateDeep font-black">MM</span><div><p class="font-black">Mountain Movers</p><p class="text-xs text-slate-400">Furniture Removals & Storage</p></div></div>
+        <p class="mt-5 max-w-md text-sm leading-6 text-slate-400">MOVING? MADE EASY! Professional removals, packing and storage across South Africa.</p>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex rounded-lg border border-white/15 px-4 py-2.5 text-sm font-bold hover:border-electric hover:text-electric">Facebook ↗</a>
+      </div>
+      <div><h3 class="text-sm font-black uppercase tracking-wider text-electric">Quick Links</h3><div class="mt-4 grid gap-2 text-sm text-slate-400"><a href="#home" class="hover:text-white">Home</a><a href="#services" class="hover:text-white">Services</a><a href="#routes" class="hover:text-white">Routes</a><a href="#calculator" class="hover:text-white">Quote Calculator</a><a href="#contact" class="hover:text-white">Contact</a></div></div>
+      <div><h3 class="text-sm font-black uppercase tracking-wider text-electric">Contact</h3><div class="mt-4 grid gap-3 text-sm text-slate-400"><a href="tel:+27810269209" class="hover:text-white">081 026 9209</a><a href="mailto:quotes@mountainmovers.co.za" class="hover:text-white">quotes@mountainmovers.co.za</a><a href="https://wa.me/27810269209" target="_blank" rel="noopener noreferrer" class="hover:text-white">WhatsApp</a></div></div>
+    </div>
+    <div class="mt-10 border-t border-white/10 pt-6">
+      <p class="text-xs leading-5 text-slate-500">Disclaimer: Calculator amounts are indicative planning estimates only and are not binding quotations. Final pricing depends on inventory, route, access, packing requirements, timing and other confirmed moving requirements.</p>
+      <div class="mt-5 flex flex-col gap-2 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between"><span>© <span id="year"></span> Mountain Movers. All rights reserved.</span><span>WE MOVE. YOU RELAX.</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script>
+(() => {
+  "use strict";
+  const WA = "27810269209";
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuIcon = document.getElementById("menuIcon");
+  const closeIcon = document.getElementById("closeIcon");
+
+  menuBtn.addEventListener("click", () => {
+    const open = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!open));
+    mobileMenu.classList.toggle("hidden", open);
+    menuIcon.classList.toggle("hidden", !open);
+    closeIcon.classList.toggle("hidden", open);
+  });
+  document.querySelectorAll("#mobileMenu a").forEach(a => a.addEventListener("click", () => {
+    menuBtn.setAttribute("aria-expanded","false");
+    mobileMenu.classList.add("hidden");
+    menuIcon.classList.remove("hidden");
+    closeIcon.classList.add("hidden");
+  }));
+
+  const service = document.getElementById("service");
+  const pickup = document.getElementById("pickup");
+  const destination = document.getElementById("destination");
+  const size = document.getElementById("size");
+  const packing = document.getElementById("packing");
+  const estimate = document.getElementById("estimate");
+  const estimateNote = document.getElementById("estimateNote");
+  const sService = document.getElementById("sService");
+  const sRoute = document.getElementById("sRoute");
+  const sSize = document.getElementById("sSize");
+
+  const sizeBase = {
+    "Single Items / Few Boxes": [3500,6000],
+    "1-2 Bedroom": [8500,14500],
+    "3-4 Bedroom": [15000,24000],
+    "Large House / Commercial Office": [24000,40000]
+  };
+
+  const distanceAdd = {
+    "Local": 0,
+    "JHB-PTA": 1000, "PTA-JHB": 1000,
+    "JHB-DBN": 5000, "DBN-JHB": 5000,
+    "JHB-CPT": 9000, "CPT-JHB": 9000,
+    "JHB-PE": 5500, "PE-JHB": 5500,
+    "PTA-DBN": 5200, "DBN-PTA": 5200,
+    "PTA-CPT": 9200, "CPT-PTA": 9200,
+    "PTA-PE": 5700, "PE-PTA": 5700,
+    "DBN-CPT": 10500, "CPT-DBN": 10500,
+    "DBN-PE": 4000, "PE-DBN": 4000,
+    "CPT-PE": 4500, "PE-CPT": 4500
+  };
+
+  const money = n => "R" + Math.round(n).toLocaleString("en-ZA");
+
+  function calculate() {
+    let [low, high] = sizeBase[size.value];
+    const routeKey = `${pickup.value}-${destination.value}`;
+    const routeAdd = distanceAdd[routeKey] ?? (pickup.value === destination.value ? 500 : 3000);
+    const packingAdd = packing.checked ? 2500 : 0;
+
+    low += routeAdd + packingAdd;
+    high += routeAdd + packingAdd;
+
+    if (service.value === "Packing & Wrapping") { low += 1000; high += 2500; }
+    if (service.value === "Secure Storage") { low += 3000; high += 7000; }
+    if (service.value === "Office Removals") { low += 2500; high += 5000; }
+
+    estimate.textContent = `${money(low)} – ${money(high)}`;
+    estimateNote.textContent = `Based on a ${size.value.toLowerCase()} move from ${pickup.value} to ${destination.value}.`;
+    sService.textContent = service.value;
+    sRoute.textContent = `${pickup.value} → ${destination.value}`;
+    sSize.textContent = size.value;
+  }
+
+  [service,pickup,destination,size,packing].forEach(el => el.addEventListener("change", calculate));
+  calculate();
+
+  document.querySelectorAll("[data-service]").forEach(link => {
+    link.addEventListener("click", () => {
+      service.value = link.dataset.service;
+      calculate();
+    });
+  });
+
+  const form = document.getElementById("quoteForm");
+  const error = document.getElementById("error");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    error.classList.add("hidden");
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!name || !phone) {
+      error.textContent = "Please enter your full name and phone number.";
+      error.classList.remove("hidden");
+      return;
+    }
+
+    const message = [
+      "MOUNTAIN MOVERS — ROUGH QUOTE REQUEST",
+      "",
+      `Full Name: ${name}`,
+      `Phone: ${phone}`,
+      `Service: ${service.value}`,
+      `Pickup: ${pickup.value}`,
+      `Destination: ${destination.value}`,
+      `Move Size: ${size.value}`,
+      `Packing / Wrapping: ${packing.checked ? "Yes" : "No"}`,
+      `Estimated Range: ${estimate.textContent}`,
+      "",
+      "Please contact me to discuss the move and confirm the official quote.",
+      "",
+      "I understand this is a rough estimate only and the official quote is subject to final inventory."
+    ].join("\n");
+
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  });
+
+  form.addEventListener("reset", () => setTimeout(calculate, 0));
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.from(".hero-copy > *", {opacity:0,y:35,duration:.8,stagger:.09,ease:"power2.out",delay:.1});
+      gsap.from(".hero-panel", {opacity:0,y:35,duration:.9,ease:"power2.out",delay:.3});
+
+      [
+        [".route-head", 0],
+        [".route-chip", .07],
+        [".section-heading", 0],
+        [".service-card", .07],
+        [".trust-strip", .08],
+        ["#quoteForm", 0],
+        ["#calculator aside", 0],
+        ["#contact > div", 0]
+      ].forEach(([selector, stagger]) => {
+        gsap.utils.toArray(selector).forEach((el,i) => {
+          gsap.from(el,{
+            scrollTrigger:{trigger:el,start:"top 86%",once:true},
+            opacity:0,y:35,duration:.8,delay:stagger ? (i%3)*stagger : 0,ease:"power2.out"
+          });
+        });
+      });
+      gsap.from(".trust-badge",{opacity:0,y:20,duration:.65,stagger:.12,delay:.55,ease:"power2.out"});
+      gsap.from(".trust-panel",{scrollTrigger:{trigger:".hero-panel",start:"top 85%",once:true},opacity:0,y:20,duration:.65,stagger:.1,ease:"power2.out"});
+    }
+  }
+})();
+</script>
+</body>
+</html>
